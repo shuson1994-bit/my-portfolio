@@ -17,7 +17,12 @@
   </style>
 </head>
 <body>
-  <h1>Shubham Sunil Sonawane</h1>
+  <h1 id="myName">Shubham Sunil Sonawane</h1>
+  <button onclick="changeName()">Transform Me!</button>
+  <button onclick="greetMe()">Say Hello!</button>
+  <button onclick="checkAge()">Check Age</button>
+  <button onclick="countSkills()">Show My Skills</button>
+  <button id="modeBtn" onclick="toggleMode()">🌙Dark Mode</button>
   <h3>Full Stack AI Developer (In Progress 🚀)</h3>
   <p>I am a BCA student passionate about building real-world web and AI applications.</p>
 
@@ -33,5 +38,46 @@
   <h2>Contact</h2>
   <p>Email: shuson1994@gmail.com</p>
   <a href="https://github.com">My GitHub</a>
-</body>
+  <script>
+   function togleMode() {
+    let body = document.body;
+    let btn = document.getElementById("modeBtn");
+
+    if (body.style.backgroundColor ==="white") {
+      body.style.backgroundColor = "#0f0f0f";
+      body.style.color = "white";
+      btn.innerHTML = "☀Light Mode";
+    } else {
+      body.style.backgroundColor = "white";
+      body.style.color = "black";
+      btn.innerHTML = "🌙Dark Mode";
+    }
+  }
+   
+   
+   function changeName() {
+      document.getElementById("myName").innerHTML = "Shubham Sunil Sonawane - Full Stack Developer";
+      document.getElementById("myName").style.color = "#ff6b35";
+    }
+    
+    function greetMe() {
+      alert("Hello! I am Shubham, a Full Stack Developer!");
+    }
+      function checkAge() {
+        let age = prompt("32:");
+        if (age >= 18) {
+          alert("You are an adult!");
+        } else {
+          alert("You are a minor!");
+        } 
+      }
+      function countSkills() {
+        let skills = ["HTML", "CSS", "JavaScipt", "Python", "React", "Node.js"];
+        let message = "My Skills:\n";
+        for (let i=0; i < skills.length; i++) {
+          message += (i + 1) +"." + skills[i] + "\n";
+        }
+        alert(message);
+      }
+    </script>
 </html>
